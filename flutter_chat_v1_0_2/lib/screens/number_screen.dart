@@ -216,7 +216,7 @@ class NumberScreen extends GetView<LoginController> {
                         child: InkWell(
                           onTap: () {
                             controller.sendOTP();
-                            // Get.to(const VerificationScreen());
+                            Get.to(const VerificationScreen());
                           },
                           borderRadius: BorderRadius.circular(30),
                           child: const Center(
