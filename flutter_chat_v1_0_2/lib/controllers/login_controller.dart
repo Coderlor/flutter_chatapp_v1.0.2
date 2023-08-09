@@ -15,7 +15,7 @@ class LoginController extends GetxController {
   TextEditingController numberController = TextEditingController();
   TextEditingController otpController = TextEditingController();
   TextEditingController nameController = TextEditingController();
-  String code = "+92";
+  String code = "+84";
   RxString numberError = RxString("");
   RxString nameError = RxString("");
   RxString pinError = RxString("");
@@ -127,6 +127,10 @@ class LoginController extends GetxController {
                     Navigator.pop(context);
                     var status = await appPermission.isStoragePermissionOk();
                     switch (status) {
+                      case PermissionStatus
+                            .provisional: // Thêm trường hợp cho provisional
+                        getImage(ImageSource.camera);
+                        break;
                       case PermissionStatus.denied:
                         var status =
                             await Permission.storage.request().isDenied;
@@ -161,6 +165,10 @@ class LoginController extends GetxController {
                     Navigator.pop(context);
                     var status = await appPermission.isCameraPermissionOk();
                     switch (status) {
+                      case PermissionStatus
+                            .provisional: // Thêm trường hợp cho provisional
+                        getImage(ImageSource.camera);
+                        break;
                       case PermissionStatus.denied:
                         var status = await Permission.camera.request().isDenied;
                         if (status) {
