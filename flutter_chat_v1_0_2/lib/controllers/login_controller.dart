@@ -126,7 +126,7 @@ class LoginController extends GetxController {
                   onTap: () async {
                     Navigator.pop(context);
                     var status = await appPermission.isStoragePermissionOk();
-                    /*switch (status) {
+                    switch (status) {
                       case PermissionStatus.denied:
                         var status =
                             await Permission.storage.request().isDenied;
@@ -148,7 +148,7 @@ class LoginController extends GetxController {
                       case PermissionStatus.permanentlyDenied:
                         await openAppSettings();
                         break;
-                    }*/
+                    }
                   },
                 ),
                 ListTile(
@@ -160,7 +160,7 @@ class LoginController extends GetxController {
                   onTap: () async {
                     Navigator.pop(context);
                     var status = await appPermission.isCameraPermissionOk();
-                    /*switch (status) {
+                    switch (status) {
                       case PermissionStatus.denied:
                         var status = await Permission.camera.request().isDenied;
                         if (status) {
@@ -181,7 +181,7 @@ class LoginController extends GetxController {
                       case PermissionStatus.permanentlyDenied:
                         await openAppSettings();
                         break;
-                    }*/
+                    }
                   },
                 ),
               ],
